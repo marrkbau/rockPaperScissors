@@ -2,6 +2,8 @@ const buttons = document.querySelectorAll(".btn");
 const wins = document.querySelector(".wins");
 const loses = document.querySelector(".loses");
 const ties = document.querySelector(".ties");
+const answertxt = document.querySelector(".answertxt");
+const answer = document.querySelector(".answer"); 
 
 buttons.forEach( (btn) => {
     btn.addEventListener('click', (event) => {
@@ -18,47 +20,68 @@ buttons.forEach( (btn) => {
 
         if(event.target.id === 'scissors'){
             if(computerChoice === 'scissors'){
-                alert(`You chose ${event.target.id}, the computer chose ${computerChoice} it's a tie.`)
                 numTiesAct++;
+                answertxt.textContent = "it's a tie! The computer chose:";
+                answer.textContent = "✌️";
             }
             if(computerChoice === 'paper'){
-                alert(`You chose ${event.target.id}, the computer chose ${computerChoice} you win!`)
                 numWinsAct++;
+                answertxt.textContent = "You win! The computer chose:";
+                answer.textContent = "✋";
             }   
             if(computerChoice === 'rock'){
-                alert(`You chose ${event.target.id}, the computer chose ${computerChoice} you lose.`)
-                numLosesAct++;
+                numLosesAct++; 
+                answertxt.textContent = "You lose! The computer chose:";
+                answer.textContent = "✊";
             }
         }
         if(event.target.id === 'rock'){
             if(computerChoice === 'rock'){
                 numTiesAct++;
-                alert(`You chose ${event.target.id}, the computer chose ${computerChoice} it's a tie.`)
+                answertxt.textContent = "it's a tie! The computer chose:";
+                answer.textContent = "✊";
             }
-            if(computerChoice === 'scissors'){
-                alert(`You chose ${event.target.id}, the computer chose ${computerChoice} you win!`)
+            if(computerChoice === 'scissors'){  
                 numWinsAct++;
+                answertxt.textContent = "You win! The computer chose:";
+                answer.textContent = "✌️";
+                
             }
             if(computerChoice === 'paper'){
-                alert(`You chose ${event.target.id}, the computer chose ${computerChoice} you lose.`)
                 numLosesAct++;
+                answertxt.textContent = "You lose! The computer chose:";
+                answer.textContent = "✋";
             }
         }
         if(event.target.id === 'paper'){
             if(computerChoice === 'paper'){
                 numTiesAct++;
-                alert(`You chose ${event.target.id}, the computer chose ${computerChoice} it's a tie.`)
+                answertxt.textContent = "it's a tie! The computer chose:";
+                answer.textContent = "✋";
+                
             }
             if(computerChoice === 'rock'){
-                alert(`You chose ${event.target.id}, the computer chose ${computerChoice} you win!`)
+
                 numWinsAct++;
+                answertxt.textContent = "You win! The computer chose:";
+                answer.textContent = "✊";
+             
             }
             if(computerChoice === 'scissors'){
-                alert(`You chose ${event.target.id}, the computer chose ${computerChoice} you lose.`)
                 numLosesAct++;
+                answertxt.textContent = "You lose! The computer chose:";
+                answer.textContent = "✌️";
+               
             }
 
            
+        }
+
+        if (answertxt.hasAttribute("hidden")) {
+            answertxt.removeAttribute("hidden");
+        }
+        if(answer.hasAttribute("hidden")){
+            answer.removeAttribute("hidden");
         }
         // const resultParagraph = document.createElement('p');
         // resultParagraph.textContent = 'Computer Choice: ' + computerChoice;
@@ -67,6 +90,7 @@ buttons.forEach( (btn) => {
         wins.textContent = numWinsAct.toString();
         loses.textContent = numLosesAct.toString();
         ties.textContent = numTiesAct.toString();
+        setTimeout(hideItms, 3000);
         })
 })
 
@@ -82,3 +106,9 @@ const decideFate = () => {
 
     return computerChoice;
 }
+
+const hideItms = () => {
+    answer.setAttribute("hidden", "true");
+    answertxt.setAttribute("hidden", "true");
+}
+

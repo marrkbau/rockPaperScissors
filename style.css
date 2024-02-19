@@ -38,9 +38,20 @@ button {
     font-size: 5rem;
     transition: all .5s ease;
     border: 1px solid transparent;
-    margin-top: 12%;
+    margin-top: 7%;
     cursor: pointer;
    
+}
+
+.btn2 {
+    text-align: center;
+    background-color: rgb(13, 72, 99);
+    border-radius: 80%;
+    padding: 1rem;
+    font-size: 5rem;
+    transition: all .5s ease;
+    border: 1px solid transparent;
+    margin-top: 3%;
 }
 
 .btn:hover {
@@ -75,4 +86,8 @@ nav {
 .pnts {
     
     padding: 16px 60px 10px 50px;
+}
+
+span {
+    display: inline;
 }
