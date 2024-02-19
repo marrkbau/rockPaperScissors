@@ -1,10 +1,78 @@
-.btn {
-    color: black;
-    background-color: red;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&display=swap');
+
+.wins {
+    color: aliceblue;
 }
 
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+    font-family: 'Courier New', 'Courier', sans-serif;
+}
 
 body {
     background-color: black;
-    color: white;
+}
+
+button {
+    background: none;
+    border: 0;
+    color: inherit;
+    /* cursor: default; */
+    font: inherit;
+    line-height: normal;
+    overflow: visible;
+    padding: 0;
+   /* -webkit-user-select: none; /* for button 
+     -webkit-appearance: button; /* for input 
+       -moz-user-select: none;
+        -ms-user-select: none; */
+}
+
+.btn {
+    text-align: center;
+    background-color: rgb(29, 27, 27);
+    border-radius: 80%;
+    padding: 1rem;
+    font-size: 5rem;
+    transition: all .5s ease;
+    border: 1px solid transparent;
+    margin-top: 12%;
+    cursor: pointer;
+   
+}
+
+.btn:hover {
+    background-color: rgb(53, 33, 33);
+    
+}
+
+main {
+    text-align: center;
+
+}
+
+.txt {
+    /* display: block; */
+    color: beige;
+    margin-top: 5%;
+    font-size: 2rem;
+}
+
+nav {
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+}
+
+.centered-content {
+    display: flex;
+    flex-direction: row;
+    text-align: right;
+}
+
+.pnts {
+    
+    padding: 16px 60px 10px 50px;
 }
