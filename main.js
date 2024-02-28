@@ -4,6 +4,7 @@ const loses = document.querySelector(".loses");
 const ties = document.querySelector(".ties");
 const answertxt = document.querySelector(".answertxt");
 const answer = document.querySelector(".answer"); 
+const reset = document.querySelector(".rst");
 
 buttons.forEach( (btn) => {
     btn.addEventListener('click', (event) => {
@@ -83,6 +84,9 @@ buttons.forEach( (btn) => {
         if(answer.hasAttribute("hidden")){
             answer.removeAttribute("hidden");
         }
+
+        
+
         // const resultParagraph = document.createElement('p');
         // resultParagraph.textContent = 'Computer Choice: ' + computerChoice;
         // document.body.appendChild(resultParagraph);
@@ -112,3 +116,31 @@ const hideItms = () => {
     answertxt.setAttribute("hidden", "true");
 }
 
+
+reset.addEventListener('click', () => {
+    wins.textContent = "0";
+    loses.textContent = "0";
+    ties.textContent = "0";
+});
+
+
+const resetScore = () => {
+    rst.addEventListener('click', () => {
+        let txtWinsAct = wins.textContent;
+        let txtLosesAct = loses.textContent;
+        let txtTiesAct = ties.textContent;
+        let numWinsAct = parseInt(txtWinsAct);
+        let numLosesAct = parseInt(txtLosesAct);
+        let numTiesAct = parseInt(txtTiesAct);
+
+        numTiesAct = 0;
+        numLosesAct = 0;
+        numWinsAct = 0;
+
+        wins.textContent = numWinsAct.toString();
+        loses.textContent = numLosesAct.toString();
+        ties.textContent = numTiesAct.toString();
+    })
+
+    
+}
